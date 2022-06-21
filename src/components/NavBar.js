@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 import { FaFortAwesome } from "react-icons/fa";
 
@@ -9,10 +10,10 @@ const NavBar = () => {
       <h2>Surreal Estate</h2>
       <ul className="navbar-links">
         <li className="navbar-links-item">
-          <a href="url">View Properties</a>
+          <Link to="/">View Properties</Link>
         </li>
         <li className="navbar-links-item">
-          <a href="url">Add a Property</a>
+          <Link to="/add-property">Add a Property</Link>
         </li>
       </ul>
     </div>
