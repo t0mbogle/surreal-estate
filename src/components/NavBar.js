@@ -10,10 +10,14 @@ const NavBar = () => {
       <h2>Surreal Estate</h2>
       <ul className="navbar-links">
         <li className="navbar-links-item">
-          <Link to="/">View Properties</Link>
+          <Link className="item" to="/">
+            View Properties
+          </Link>
         </li>
         <li className="navbar-links-item">
-          <Link to="/add-property">Add a Property</Link>
+          <Link className="item" to="/add-property">
+            Add a Property
+          </Link>
         </li>
       </ul>
     </div>
