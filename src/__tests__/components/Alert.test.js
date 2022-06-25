@@ -8,9 +8,15 @@ describe("Alert", () => {
 
     expect(getByText(/Error/).textContent).toBe("Error!");
   });
-  it("displays an error message", () => {
+  it("displays a success message", () => {
     const { getByText } = render(<Alert message="Success!" success />);
 
     expect(getByText(/Success/).textContent).toBe("Success!");
+  });
+  it("does not render an error/success message if message prop is empty", () => {
+    const { asFragment } = render(<Alert message="" />);
+    const alert = asFragment();
+
+    expect(alert).toMatchSnapshot();
   });
 });

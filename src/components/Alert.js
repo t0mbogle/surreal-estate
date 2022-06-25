@@ -2,8 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Alert = ({ message, success }) => {
-  // conditional class naming based on true or false success
+  if (!message) return null; // Conditional rendering to only show message if truthy
+
   return (
+    // conditional class naming based on success result (.alert-success/.alert-error)
     <div className={`alert alert-${success ? "success" : "error"}`}>
       {message}
     </div>

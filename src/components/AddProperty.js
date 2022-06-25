@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/add-property.css";
 import axios from "axios";
+import Alert from "./Alert";
 
 const AddProperty = () => {
   const initialState = {
@@ -13,19 +14,32 @@ const AddProperty = () => {
       email: "",
       price: "500",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
+    setAlert({ message: "", isSuccess: false });
+    // clear error or success message before every resubmit of form, i.e. no message.
 
     axios
       .post("https://surreal-api.herokuapp.com/api/v1/PropertyListing", fields)
-      .then((res) => {
-        console.log(res, "res");
+      .then(() => {
+        setAlert({
+          message: "Property Added",
+          isSuccess: true,
+        });
       })
-      .catch((err) => {
-        console.log("server error", err);
+      .catch(() => {
+        setAlert({
+          message: "Server error, please try again later.",
+          isSuccess: false,
+        });
       });
   };
 
@@ -39,6 +53,7 @@ const AddProperty = () => {
     <div className="add-property">
       Add Property Page
       <form onSubmit={handleAddProperty} className="add-property-form">
+        <Alert message={alert.message} success={alert.isSuccess} />
         <div className="add-property-label">
           <label htmlFor="title">
             Title

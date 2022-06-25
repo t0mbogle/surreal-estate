@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert does not render an error/success message if message prop is empty 1`] = `<DocumentFragment />`;
