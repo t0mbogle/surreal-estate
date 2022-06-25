@@ -18,13 +18,11 @@ const AddProperty = () => {
 
   const handleAddProperty = (event) => {
     event.preventDefault();
-    console.log(fields);
 
-    axios.defaults.baseURL = "http://localhost:3000/api/v1";
     axios
-      .post("/PropertyListing", fields)
+      .post("https://surreal-api.herokuapp.com/api/v1/PropertyListing", fields)
       .then((res) => {
-        console.log(res.data);
+        console.log(res, "res");
       })
       .catch((err) => {
         console.log("server error", err);

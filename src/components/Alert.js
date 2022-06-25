@@ -1,7 +1,7 @@
-// import React from "react";
+import React from "react";
 
-// const Alert = (message, string) => {
-  
-// };
+const Alert = ({ message }) => {
+  <div className="alert">{message}</div>;
+};
 
-// export default Alert;
+export default Alert;
