@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../styles/alert.css";
 
 const Alert = ({ message, success }) => {
   if (!message) return null; // Conditional rendering to only show message if truthy

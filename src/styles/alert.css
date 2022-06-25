@@ -1,0 +1,16 @@
+.alert-success, .alert-error {
+    margin: 10px 0px 20px 0px;
+    padding: 5px 0px 5px 30px;
+}
+
+.alert-success {
+    background-color: rgb(181, 241, 199);
+    border: solid 2px rgb(26, 212, 110);
+    color: black;
+}
+
+.alert-error {
+    background-color: rgb(238, 186, 186);
+    border: solid 2px rgb(241, 12, 12);
+    color: black;
+}
