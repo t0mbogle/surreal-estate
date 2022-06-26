@@ -1,0 +1,17 @@
+.property-card, .property-card_email {
+    text-align: center;
+}
+
+.property-card {
+    padding: 15px 0px 15px 0px;
+    background-color: lightgray;
+    color: rgb(10, 135, 127);
+    margin: 8px 0px 8px 0px;
+}
+
+.property-card_email {
+    padding: 5px 0px 5px 0px;
+    background-color: rgb(10, 135, 127);
+    color: white;
+    margin-top: 15px;
+}

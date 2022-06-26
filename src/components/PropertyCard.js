@@ -1,23 +1,36 @@
 import React from "react";
-import { FaFortAwesome, FaBed, FaBath, FaPaperPlane } from "react-icons/fa";
+import {
+  FaFortAwesome,
+  FaBed,
+  FaBath,
+  FaPoundSign,
+  FaPaperPlane,
+} from "react-icons/fa";
+import "../styles/property-card.css";
 
 const PropertyCard = () => {
   return (
     <>
-      <div>
-        Property Card <FaFortAwesome />
+      <div className="property-card">
+        <b>Property Details</b> <FaFortAwesome />
       </div>
-      <div className="property-card-title">title</div>
-      <div className="property-card-type-city">type & city</div>
-      <div className="property-card-bathroom">
-        <FaBath /> bathrooms
+      <div className="property-card_title">
+        <b>Title</b>
       </div>
-      <div className="property-card-bedroom">
-        <FaBed /> bedrooms
+      <div className="property-card_typeCity">
+        <i>Type - city</i>
       </div>
-      <div className="property-card-price">price</div>
-      <div className="property-card-email">
-        <FaPaperPlane /> email
+      <div className="property-card_bathroom">
+        <FaBath /> Bathrooms
+      </div>
+      <div className="property-card_bedroom">
+        <FaBed /> Bedrooms
+      </div>
+      <div className="property-card_price">
+        <FaPoundSign /> Price
+      </div>
+      <div className="property-card_email">
+        <FaPaperPlane /> <b>Email</b>
       </div>
     </>
   );
