@@ -12,6 +12,17 @@
 .property-card_email {
     padding: 5px 0px 5px 0px;
     background-color: rgb(10, 135, 127);
-    color: white;
+    color: lightgray;
     margin-top: 15px;
+}
+
+.property-card_email > a  {
+    color: lightgray;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+.property-card_email > a:hover  {
+    color: white;
 }

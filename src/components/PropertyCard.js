@@ -30,7 +30,8 @@ const PropertyCard = () => {
         <FaPoundSign /> Price
       </div>
       <div className="property-card_email">
-        <FaPaperPlane /> <b>Email</b>
+        <FaPaperPlane />
+        <a href="mailto:someone@properties.com">Email</a>
       </div>
     </>
   );
