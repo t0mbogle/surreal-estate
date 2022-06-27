@@ -1,6 +1,16 @@
 .property-listings {
-    border: solid 1px black;
+    padding: 15px 5px 15px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.property-listings > .item {
+    display: inline-block;
+    width: 32%;
+    margin: 8px;
+    padding: 0.5rem;
+    box-sizing: border-box;
     background-color: white;
-    padding: 10px;
-    margin: 10px;
+    box-shadow: 0 0 5px 5px #bababa;
 }
