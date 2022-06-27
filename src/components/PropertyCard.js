@@ -15,19 +15,19 @@ const PropertyCard = () => {
         <b>Property Details</b> <FaFortAwesome />
       </div>
       <div className="property-card_title">
-        <b>Title</b>
+        <b>Two Bed Apartment</b>
       </div>
       <div className="property-card_typeCity">
-        <i>Type - city</i>
+        <i>Flat - Manchester</i>
       </div>
       <div className="property-card_bathroom">
-        <FaBath /> Bathrooms
+        <FaBath /> 1
       </div>
       <div className="property-card_bedroom">
-        <FaBed /> Bedrooms
+        <FaBed /> 2
       </div>
       <div className="property-card_price">
-        <FaPoundSign /> Price
+        <FaPoundSign /> 750
       </div>
       <div className="property-card_email">
         <FaPaperPlane />
@@ -35,6 +35,9 @@ const PropertyCard = () => {
       </div>
     </>
   );
+  // *Note*, The textContext in this file may fail the test suite as the test suite has its own validProps,
+  // . It will reference against, so if they are not matching they will fail. Displayed here currently to
+  // display PropertyCard styling in the browser (How it would look passed props)
 };
 
 export default PropertyCard;
