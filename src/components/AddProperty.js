@@ -9,16 +9,17 @@ const AddProperty = () => {
       title: "",
       city: "Manchester",
       type: "Flat",
-      bedrooms: "",
-      bathrooms: "",
+      bedrooms: 0,
+      bathrooms: 0,
       email: "",
-      price: "500",
+      price: 500,
     },
     alert: {
       message: "",
       isSuccess: false,
     },
   };
+
   const [fields, setFields] = useState(initialState.fields);
   const [alert, setAlert] = useState(initialState.alert);
 
@@ -145,9 +146,9 @@ const AddProperty = () => {
               id="price"
               name="price"
               type="number"
-              min="10.00"
-              step="10.00"
-              max="2500"
+              min="0.10"
+              step="0.10"
+              max="1000000"
               value={fields.price}
               onChange={handleFieldChange}
             />
@@ -162,7 +163,6 @@ const AddProperty = () => {
         </button>
       </form>
     </div>
-    // Not sure if onChange is needed in button. setFields will not be used
   );
 };
 

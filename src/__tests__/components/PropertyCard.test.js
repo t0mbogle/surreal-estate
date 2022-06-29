@@ -4,48 +4,56 @@ import PropertyCard from "../../components/PropertyCard";
 
 describe("Property Card", () => {
   const validProps = {
-    title: "Two Bed Apartment",
+    title: "Two bed flat",
     type: "Flat",
     city: "Manchester",
     bathrooms: 1,
     bedrooms: 2,
-    price: "750",
-    email: "example@email.com",
+    price: 750,
+    email: "hello@email.com",
   };
 
-  beforeEach(() => render(<PropertyCard dummyProps={validProps} />));
+  it("renders property card with correct data", () => {
+    const { asFragment } = render(<PropertyCard />);
 
-  it("checks title prop is rendered correctly", () => {
-    const title = screen.getByText(/two bed apartment/i);
-
-    expect(title).toHaveTextContent("Apartment");
+    expect(asFragment()).toMatchSnapshot();
   });
-  it("checks type and city props have been rendered correctly", () => {
-    const typeCity = screen.getByText(/flat - manchester/i);
 
-    expect(typeCity).toHaveTextContent(
-      `${validProps.type} - ${validProps.city}`
+  it("checks title prop has rendered correctly", () => {
+    const { getByText } = render(<PropertyCard {...validProps} />);
+
+    expect(getByText(/two bed flat/i).textContent).toBe("Two bed flat");
+  });
+  it("checks type and city props have rendered correctly", () => {
+    const { getByText } = render(<PropertyCard {...validProps} />);
+
+    expect(getByText(/flat - manchester/i).textContent).toBe(
+      "Flat - Manchester"
     );
   });
   it("checks bathrooms prop has rendered correctly", () => {
-    const bathrooms = screen.getByText(/1/);
+    const { getByText } = render(<PropertyCard {...validProps} />);
 
-    expect(bathrooms).toHaveTextContent(1);
+    expect(getByText(/1/).textContent).toBe("1");
   });
   it("checks bedrooms prop has rendered correctly", () => {
-    const bedrooms = screen.getByText(/2/);
+    const { getByText } = render(<PropertyCard {...validProps} />);
 
-    expect(bedrooms).toHaveTextContent(2);
+    expect(getByText(/2/).textContent).toBe("2");
   });
   it("checks price prop has rendered correctly", () => {
-    const price = screen.getByText(/750/);
+    const { getByText } = render(<PropertyCard {...validProps} />);
 
-    expect(price).toHaveTextContent(750);
+    expect(getByText(/750/).textContent).toBe("750");
   });
-  // it("checks email prop has rendered correctly", () => {
-  //   const email = screen.getByText(/email/);
+  it("checks email prop has rendered correctly", () => {
+    // const { getByText } = render(<PropertyCard {...validProps} />);
+    const linkEl = screen.getByRole("button", { name: "email" });
 
-  //   expect(email).toHaveTextContent("Email");
-  //   // expect icon to be rendered
-  // });
+    expect(linkEl).toHaveAttribute("href", "email");
+    // expect(getByText("a").getAttribute("href")).toBeInTheDocument();
+    // expect(getByText("email").closest("a")).toHaveAttribute("href");
+    // expect(screen.getByRole("a")).toContain("email");
+    // expect(getByRole(/email/i).textContent).toContain("email");
+  });
 });

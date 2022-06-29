@@ -1,43 +1,73 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   FaFortAwesome,
   FaBed,
   FaBath,
   FaPoundSign,
-  FaPaperPlane,
+  FaEnvelope,
 } from "react-icons/fa";
 import "../styles/property-card.css";
 
-const PropertyCard = () => {
+const PropertyCard = ({
+  title,
+  type,
+  city,
+  bathrooms,
+  bedrooms,
+  price,
+  email,
+}) => {
+  // const formattedPrice = parseInt(price, 10).toLocaleString("en-GB", {
+  //   minimumFractionDigits: 2,
+  //   maximumFractionDigits: 2,
+  // });
+
+  const formatPrice = Intl.NumberFormat("en-GB", {
+    style: "currency",
+    currency: "GBP",
+  });
+  // eslint-disable-next-line no-var
+  const newPrice = formatPrice.format(price);
+
   return (
     <>
       <div className="property-card">
-        <b>Property Details</b> <FaFortAwesome />
+        <b>Property Listing</b> <FaFortAwesome />
       </div>
-      <div className="property-card_title">
-        <b>Two Bed Apartment</b>
-      </div>
+      <div className="property-card_title">{title}</div>
       <div className="property-card_typeCity">
-        <i>Flat - Manchester</i>
+        {type} - {city}
       </div>
       <div className="property-card_bathroom">
-        <FaBath /> 1
+        <FaBath />
+        {bathrooms}
       </div>
       <div className="property-card_bedroom">
-        <FaBed /> 2
+        <FaBed />
+        {bedrooms}
       </div>
       <div className="property-card_price">
-        <FaPoundSign /> 750
+        <FaPoundSign />
+        {newPrice}
       </div>
       <div className="property-card_email">
-        <FaPaperPlane />
-        <a href="mailto:someone@properties.com">Email</a>
+        <a href={`mailto:${email}`}>
+          <FaEnvelope /> Contact
+        </a>
       </div>
     </>
   );
-  // *Note*, The textContext in this file may fail the test suite as the test suite has its own validProps,
-  // . It will reference against, so if they are not matching they will fail. Displayed here currently to
-  // display PropertyCard styling in the browser (How it would look passed props)
 };
 
 export default PropertyCard;
+
+PropertyCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  bathrooms: PropTypes.number.isRequired,
+  bedrooms: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  email: PropTypes.string.isRequired,
+};

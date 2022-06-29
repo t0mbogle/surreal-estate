@@ -25,6 +25,7 @@ const Properties = () => {
 
   return (
     <>
+      <Alert message={alert.message} />
       <div>Properties Page</div>
       <div className="property-listings">
         {properties.map((property) => (
@@ -33,7 +34,6 @@ const Properties = () => {
           </div>
         ))}
       </div>
-      <Alert message={alert.message} />
     </>
   );
 };
