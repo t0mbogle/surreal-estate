@@ -27,7 +27,6 @@ const PropertyCard = ({
     style: "currency",
     currency: "GBP",
   });
-  // eslint-disable-next-line no-var
   const newPrice = formatPrice.format(price);
 
   return (
