@@ -12,5 +12,8 @@
     padding: 0.5rem;
     box-sizing: border-box;
     background-color: white;
-    box-shadow: 0 0 5px 5px #bababa;
+}
+
+.property-listings > .item:hover {
+    box-shadow: 0 0 5px 5px #bababa;   
 }
