@@ -18,11 +18,6 @@ const PropertyCard = ({
   price,
   email,
 }) => {
-  // const formattedPrice = parseInt(price, 10).toLocaleString("en-GB", {
-  //   minimumFractionDigits: 2,
-  //   maximumFractionDigits: 2,
-  // });
-
   const formatPrice = Intl.NumberFormat("en-GB", {
     style: "currency",
     currency: "GBP",
