@@ -2,7 +2,7 @@
     background-color: white;
     border-bottom: solid 2px grey;
     display: flex;
-    align-items: baseline;
+    align-items: center;
 }
 
 .navbar-icon {
