@@ -19,5 +19,5 @@ Coming soon...
 This is a project from the Software Engineering course by Manchester Codes.
 
 ## Status
-Starting up
+Project not finished and not currently receiving updates, however features will be added in the near future! :)
 

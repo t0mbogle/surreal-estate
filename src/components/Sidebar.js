@@ -18,7 +18,6 @@ const Sidebar = () => {
     return qs.stringify(newQuery, { addQueryPrefix: true, encode: false });
     // add '?' prefix to the start, and encode: false to keep curly braces in query
   };
-
   // const ascending = price.sort((a, b) => a - b);
   // const descending = price.sort((a, b) => b - a);
 
@@ -57,6 +56,6 @@ const Sidebar = () => {
     </div>
   );
 };
-// Add clear feature to remove filtering
+// Add clear feature to remove filtering/sorting
 
 export default Sidebar;

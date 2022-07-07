@@ -35,7 +35,7 @@ const Properties = () => {
 
   return (
     <>
-      <Alert message={alert.message} />
+      <Alert message={alert.message} delay={5000} />
       <Sidebar />
       <div className="property-listings">
         {properties.map((property) => (

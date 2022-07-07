@@ -26,3 +26,9 @@
     background-color: rgb(10, 135, 127);
     font-weight: bold;
 }
+
+.sidebar-list_city > a:focus, .sidebar-list_price > a:focus {
+    font-weight: bold;
+    color: white;
+    background-color: teal;
+}
